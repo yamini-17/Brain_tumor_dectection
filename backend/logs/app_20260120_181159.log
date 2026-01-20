@@ -1,0 +1,36 @@
+2026-01-20 18:11:59,594 - __main__ - INFO - ======================================================================
+2026-01-20 18:11:59,595 - __main__ - INFO - INITIALIZING BRAIN TUMOR DETECTION SYSTEM
+2026-01-20 18:11:59,596 - __main__ - INFO - ======================================================================
+2026-01-20 18:11:59,596 - utils.preprocess - INFO - ImagePreprocessor initialized with target size: (640, 640)
+2026-01-20 18:11:59,597 - __main__ - INFO - [OK] Image Preprocessor initialized
+2026-01-20 18:11:59,597 - utils.inference - INFO - GPU not available. Using CPU for inference.
+2026-01-20 18:11:59,607 - utils.inference - ERROR - Error loading YOLOv8 model: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL torch.nn.modules.container.Sequential was not an allowed global by default. Please use `torch.serialization.add_safe_globals([torch.nn.modules.container.Sequential])` or the `torch.serialization.safe_globals([torch.nn.modules.container.Sequential])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2026-01-20 18:11:59,607 - __main__ - WARNING - [!] Failed to load YOLOv9 model
+2026-01-20 18:11:59,608 - __main__ - WARNING - [!] Running in DEMO MODE instead
+2026-01-20 18:11:59,608 - __main__ - INFO - [OK] Demo mode initialized
+2026-01-20 18:11:59,608 - __main__ - INFO - Starting Flask server on 0.0.0.0:5000
+2026-01-20 18:11:59,608 - __main__ - INFO - Debug mode: False
+2026-01-20 18:11:59,609 - __main__ - INFO - ======================================================================
+2026-01-20 18:11:59,630 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.136.158.1:5000
+2026-01-20 18:11:59,631 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-20 18:13:23,751 - __main__ - INFO - Processing image: images (1).jpg (3860 bytes)
+2026-01-20 18:13:23,780 - utils.preprocess - INFO - Preprocessing complete. Original size: (234, 216), Target size: (640, 640)
+2026-01-20 18:13:24,094 - __main__ - INFO - [DEMO] Smart prediction: tumor=False, confidence=0.24
+2026-01-20 18:13:24,095 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:13:24,097 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:13:24] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:13:33,399 - __main__ - INFO - Processing image: images.jpg (4337 bytes)
+2026-01-20 18:13:33,426 - utils.preprocess - INFO - Preprocessing complete. Original size: (252, 200), Target size: (640, 640)
+2026-01-20 18:13:33,749 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.83
+2026-01-20 18:13:33,753 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[207, 152, 156, 185]
+2026-01-20 18:13:33,804 - __main__ - INFO - Drawing box at x=207, y=152, w=156, h=185
+2026-01-20 18:13:33,844 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:13:33,844 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:13:33,847 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:13:33] "POST /predict HTTP/1.1" 200 -

@@ -1,0 +1,78 @@
+2026-01-20 17:54:35,073 - __main__ - INFO - ======================================================================
+2026-01-20 17:54:35,074 - __main__ - INFO - INITIALIZING BRAIN TUMOR DETECTION SYSTEM
+2026-01-20 17:54:35,074 - __main__ - INFO - ======================================================================
+2026-01-20 17:54:35,075 - utils.preprocess - INFO - ImagePreprocessor initialized with target size: (640, 640)
+2026-01-20 17:54:35,075 - __main__ - INFO - [OK] Image Preprocessor initialized
+2026-01-20 17:54:35,076 - utils.inference - INFO - GPU not available. Using CPU for inference.
+2026-01-20 17:54:35,087 - utils.inference - ERROR - Error loading YOLOv8 model: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL torch.nn.modules.container.Sequential was not an allowed global by default. Please use `torch.serialization.add_safe_globals([torch.nn.modules.container.Sequential])` or the `torch.serialization.safe_globals([torch.nn.modules.container.Sequential])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2026-01-20 17:54:35,088 - __main__ - WARNING - [!] Failed to load YOLOv9 model
+2026-01-20 17:54:35,088 - __main__ - WARNING - [!] Running in DEMO MODE instead
+2026-01-20 17:54:35,088 - __main__ - INFO - [OK] Demo mode initialized
+2026-01-20 17:54:35,089 - __main__ - INFO - Starting Flask server on 0.0.0.0:5000
+2026-01-20 17:54:35,089 - __main__ - INFO - Debug mode: False
+2026-01-20 17:54:35,089 - __main__ - INFO - ======================================================================
+2026-01-20 17:54:35,110 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.136.158.1:5000
+2026-01-20 17:54:35,110 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-20 17:55:20,742 - __main__ - INFO - Processing image: 1_jpg.rf.eee6547c09d13001fff4a45c380115aa.jpg (37000 bytes)
+2026-01-20 17:55:20,820 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 17:55:21,174 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.76
+2026-01-20 17:55:21,175 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': True, 'confidence': 0.7575444326204164, 'bounding_box': [246, 180, 175, 156], 'processing_time_ms': 300.25, 'detections_count': 1, 'all_detections': [{'conf': 0.7575444326204164, 'bbox': [150, 150, 100, 100]}], 'timestamp': '2026-01-20T17:55:21.175269'}
+2026-01-20 17:55:21,179 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:55:21] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:55:51,771 - __main__ - INFO - Processing image: ChatGPT Image Nov 18, 2025, 12_12_39 PM.png (1224441 bytes)
+2026-01-20 17:55:51,850 - utils.preprocess - INFO - Preprocessing complete. Original size: (1024, 1024), Target size: (640, 640)
+2026-01-20 17:55:52,166 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.81
+2026-01-20 17:55:52,167 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': True, 'confidence': 0.8061161250056412, 'bounding_box': [238, 193, 169, 128], 'processing_time_ms': 300.4, 'detections_count': 1, 'all_detections': [{'conf': 0.8061161250056412, 'bbox': [150, 150, 100, 100]}], 'timestamp': '2026-01-20T17:55:52.167142'}
+2026-01-20 17:55:52,170 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:55:52] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:56:09,347 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 17:56:09,387 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 17:56:09,713 - __main__ - INFO - [DEMO] Smart prediction: tumor=False, confidence=0.19
+2026-01-20 17:56:09,714 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': False, 'confidence': 0.18982975914403882, 'bounding_box': [], 'processing_time_ms': 300.15, 'detections_count': 0, 'all_detections': [], 'timestamp': '2026-01-20T17:56:09.714615'}
+2026-01-20 17:56:09,718 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:56:09] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:56:27,600 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 17:56:27,635 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 17:56:27,955 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.78
+2026-01-20 17:56:27,956 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': True, 'confidence': 0.7802738434197283, 'bounding_box': [163, 153, 146, 147], 'processing_time_ms': 301.01, 'detections_count': 1, 'all_detections': [{'conf': 0.7802738434197283, 'bbox': [150, 150, 100, 100]}], 'timestamp': '2026-01-20T17:56:27.955965'}
+2026-01-20 17:56:27,959 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:56:27] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:56:43,869 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 17:56:43,894 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 17:56:44,212 - __main__ - INFO - [DEMO] Smart prediction: tumor=False, confidence=0.18
+2026-01-20 17:56:44,214 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': False, 'confidence': 0.17999816157396248, 'bounding_box': [], 'processing_time_ms': 301.35, 'detections_count': 0, 'all_detections': [], 'timestamp': '2026-01-20T17:56:44.214365'}
+2026-01-20 17:56:44,218 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:56:44] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:56:55,193 - __main__ - INFO - Processing image: 1_jpg.rf.eee6547c09d13001fff4a45c380115aa.jpg (37000 bytes)
+2026-01-20 17:56:55,225 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 17:56:55,549 - __main__ - INFO - [DEMO] Smart prediction: tumor=False, confidence=0.19
+2026-01-20 17:56:55,551 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': False, 'confidence': 0.1930059616072378, 'bounding_box': [], 'processing_time_ms': 300.42, 'detections_count': 0, 'all_detections': [], 'timestamp': '2026-01-20T17:56:55.551082'}
+2026-01-20 17:56:55,553 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:56:55] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:57:14,421 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 17:57:14,459 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 17:57:14,771 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.72
+2026-01-20 17:57:14,772 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': True, 'confidence': 0.7179684111113058, 'bounding_box': [187, 242, 140, 175], 'processing_time_ms': 300.53, 'detections_count': 1, 'all_detections': [{'conf': 0.7179684111113058, 'bbox': [150, 150, 100, 100]}], 'timestamp': '2026-01-20T17:57:14.772045'}
+2026-01-20 17:57:14,774 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:57:14] "POST /predict HTTP/1.1" 200 -
+2026-01-20 17:57:54,579 - __main__ - INFO - Processing image: ChatGPT Image Nov 18, 2025, 12_12_39 PM.png (1224441 bytes)
+2026-01-20 17:57:54,653 - utils.preprocess - INFO - Preprocessing complete. Original size: (1024, 1024), Target size: (640, 640)
+2026-01-20 17:57:54,965 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.79
+2026-01-20 17:57:54,966 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': True, 'confidence': 0.7855295279119928, 'bounding_box': [156, 240, 173, 143], 'processing_time_ms': 300.29, 'detections_count': 1, 'all_detections': [{'conf': 0.7855295279119928, 'bbox': [150, 150, 100, 100]}], 'timestamp': '2026-01-20T17:57:54.966195'}
+2026-01-20 17:57:54,969 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 17:57:54] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:01:10,968 - __main__ - INFO - Processing image: Hirnmetastase_MRT-T1_KM.jpg (15808 bytes)
+2026-01-20 18:01:10,987 - utils.preprocess - INFO - Preprocessing complete. Original size: (270, 250), Target size: (640, 640)
+2026-01-20 18:01:11,299 - __main__ - INFO - [DEMO] Smart prediction: tumor=False, confidence=0.14
+2026-01-20 18:01:11,300 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': False, 'confidence': 0.13930759152184394, 'bounding_box': [], 'processing_time_ms': 300.78, 'detections_count': 0, 'all_detections': [], 'timestamp': '2026-01-20T18:01:11.300406'}
+2026-01-20 18:01:11,301 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:01:11] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:01:26,150 - __main__ - INFO - Processing image: images.jpg (4337 bytes)
+2026-01-20 18:01:26,182 - utils.preprocess - INFO - Preprocessing complete. Original size: (252, 200), Target size: (640, 640)
+2026-01-20 18:01:26,504 - __main__ - INFO - [DEMO] Smart prediction: tumor=False, confidence=0.14
+2026-01-20 18:01:26,504 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': False, 'confidence': 0.13944180314836882, 'bounding_box': [], 'processing_time_ms': 300.35, 'detections_count': 0, 'all_detections': [], 'timestamp': '2026-01-20T18:01:26.504833'}
+2026-01-20 18:01:26,506 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:01:26] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:01:58,528 - __main__ - INFO - Processing image: images (1).jpg (3860 bytes)
+2026-01-20 18:01:58,560 - utils.preprocess - INFO - Preprocessing complete. Original size: (234, 216), Target size: (640, 640)
+2026-01-20 18:01:58,877 - __main__ - INFO - [DEMO] Smart prediction: tumor=True, confidence=0.73
+2026-01-20 18:01:58,878 - __main__ - INFO - Prediction complete: {'status': 'success', 'tumor_detected': True, 'confidence': 0.7266837517828308, 'bounding_box': [156, 170, 150, 126], 'processing_time_ms': 300.36, 'detections_count': 1, 'all_detections': [{'conf': 0.7266837517828308, 'bbox': [150, 150, 100, 100]}], 'timestamp': '2026-01-20T18:01:58.878692'}
+2026-01-20 18:01:58,881 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:01:58] "POST /predict HTTP/1.1" 200 -

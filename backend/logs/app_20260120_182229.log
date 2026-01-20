@@ -1,0 +1,135 @@
+2026-01-20 18:22:29,519 - __main__ - INFO - ======================================================================
+2026-01-20 18:22:29,520 - __main__ - INFO - INITIALIZING BRAIN TUMOR DETECTION SYSTEM
+2026-01-20 18:22:29,520 - __main__ - INFO - ======================================================================
+2026-01-20 18:22:29,521 - utils.preprocess - INFO - ImagePreprocessor initialized with target size: (640, 640)
+2026-01-20 18:22:29,521 - __main__ - INFO - [OK] Image Preprocessor initialized
+2026-01-20 18:22:29,522 - utils.inference - INFO - GPU not available. Using CPU for inference.
+2026-01-20 18:22:29,530 - utils.inference - ERROR - Error loading YOLOv8 model: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL torch.nn.modules.container.Sequential was not an allowed global by default. Please use `torch.serialization.add_safe_globals([torch.nn.modules.container.Sequential])` or the `torch.serialization.safe_globals([torch.nn.modules.container.Sequential])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2026-01-20 18:22:29,530 - __main__ - WARNING - [!] Failed to load YOLOv9 model
+2026-01-20 18:22:29,531 - __main__ - WARNING - [!] Running in DEMO MODE instead
+2026-01-20 18:22:29,531 - __main__ - INFO - [OK] Demo mode initialized
+2026-01-20 18:22:29,532 - __main__ - INFO - Starting Flask server on 0.0.0.0:5000
+2026-01-20 18:22:29,533 - __main__ - INFO - Debug mode: False
+2026-01-20 18:22:29,533 - __main__ - INFO - ======================================================================
+2026-01-20 18:22:29,556 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.136.158.1:5000
+2026-01-20 18:22:29,556 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-20 18:23:02,574 - __main__ - INFO - Processing image: test.png (362134 bytes)
+2026-01-20 18:23:02,610 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:23:02,926 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.24, mri_likely=True
+2026-01-20 18:23:02,927 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:23:02,930 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:23:02] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:23:23,906 - __main__ - INFO - Processing image: test.png (312381 bytes)
+2026-01-20 18:23:23,932 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:23:24,246 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.90, mri_likely=True
+2026-01-20 18:23:24,247 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[299, 226, 111, 145]
+2026-01-20 18:23:24,273 - __main__ - INFO - Drawing box at x=299, y=226, w=111, h=145
+2026-01-20 18:23:24,308 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:23:24,309 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:23:24,313 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:23:24] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:24:13,270 - __main__ - INFO - Processing image: test.png (312321 bytes)
+2026-01-20 18:24:13,304 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:24:13,623 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.73, mri_likely=True
+2026-01-20 18:24:13,624 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[138, 255, 150, 128]
+2026-01-20 18:24:13,630 - __main__ - INFO - Drawing box at x=138, y=255, w=150, h=128
+2026-01-20 18:24:13,661 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:24:13,662 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:24:13,667 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:24:13] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:26:59,420 - __main__ - INFO - Processing image: images (1).jpg (3860 bytes)
+2026-01-20 18:26:59,451 - utils.preprocess - INFO - Preprocessing complete. Original size: (234, 216), Target size: (640, 640)
+2026-01-20 18:26:59,763 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.14, mri_likely=False
+2026-01-20 18:26:59,764 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:26:59,766 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:26:59] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:27:08,982 - __main__ - INFO - Processing image: images.jpg (4337 bytes)
+2026-01-20 18:27:09,015 - utils.preprocess - INFO - Preprocessing complete. Original size: (252, 200), Target size: (640, 640)
+2026-01-20 18:27:09,328 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.33, mri_likely=False
+2026-01-20 18:27:09,329 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:27:09,330 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:27:09] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:27:18,427 - __main__ - INFO - Processing image: Hirnmetastase_MRT-T1_KM.jpg (15808 bytes)
+2026-01-20 18:27:18,449 - utils.preprocess - INFO - Preprocessing complete. Original size: (270, 250), Target size: (640, 640)
+2026-01-20 18:27:18,759 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.14, mri_likely=False
+2026-01-20 18:27:18,760 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:27:18,762 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:27:18] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:27:37,762 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 18:27:37,788 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:27:38,099 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.31, mri_likely=False
+2026-01-20 18:27:38,100 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:27:38,102 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:27:38] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:27:49,085 - __main__ - INFO - Processing image: test_annotated.png (311455 bytes)
+2026-01-20 18:27:49,134 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:27:49,467 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.79, mri_likely=True
+2026-01-20 18:27:49,468 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[185, 342, 92, 80]
+2026-01-20 18:27:49,479 - __main__ - INFO - Drawing box at x=185, y=342, w=92, h=80
+2026-01-20 18:27:49,519 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:27:49,520 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:27:49,524 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:27:49] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:28:05,735 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 18:28:05,767 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:28:06,081 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.34, mri_likely=False
+2026-01-20 18:28:06,081 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:28:06,084 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:28:06] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:31:28,773 - __main__ - INFO - Processing image: images (1).jpg (3860 bytes)
+2026-01-20 18:31:28,793 - utils.preprocess - INFO - Preprocessing complete. Original size: (234, 216), Target size: (640, 640)
+2026-01-20 18:31:29,106 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.45, mri_likely=False
+2026-01-20 18:31:29,106 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[188, 228, 143, 111]
+2026-01-20 18:31:29,117 - __main__ - INFO - Drawing box at x=188, y=228, w=143, h=111
+2026-01-20 18:31:29,124 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:31:29,125 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:31:29,128 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:31:29] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:32:04,963 - __main__ - INFO - Processing image: images.jpg (4337 bytes)
+2026-01-20 18:32:04,992 - utils.preprocess - INFO - Preprocessing complete. Original size: (252, 200), Target size: (640, 640)
+2026-01-20 18:32:05,322 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.60, mri_likely=False
+2026-01-20 18:32:05,323 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[219, 342, 122, 88]
+2026-01-20 18:32:05,327 - __main__ - INFO - Drawing box at x=219, y=342, w=122, h=88
+2026-01-20 18:32:05,338 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:32:05,340 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:32:05,346 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:32:05] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:32:31,257 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 18:32:31,293 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:32:31,604 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.47, mri_likely=False
+2026-01-20 18:32:31,605 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[270, 257, 131, 96]
+2026-01-20 18:32:31,609 - __main__ - INFO - Drawing box at x=270, y=257, w=131, h=96
+2026-01-20 18:32:31,673 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:32:31,674 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:32:31,677 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:32:31] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:32:56,663 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 18:32:56,705 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:32:57,025 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.73, mri_likely=False
+2026-01-20 18:32:57,025 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[131, 167, 149, 120]
+2026-01-20 18:32:57,031 - __main__ - INFO - Drawing box at x=131, y=167, w=149, h=120
+2026-01-20 18:32:57,093 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:32:57,094 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:32:57,098 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:32:57] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:57:14,895 - __main__ - INFO - Processing image: images.jpg (4337 bytes)
+2026-01-20 18:57:14,951 - utils.preprocess - INFO - Preprocessing complete. Original size: (252, 200), Target size: (640, 640)
+2026-01-20 18:57:15,290 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.59, mri_likely=False
+2026-01-20 18:57:15,290 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[250, 233, 140, 124]
+2026-01-20 18:57:15,301 - __main__ - INFO - Drawing box at x=250, y=233, w=140, h=124
+2026-01-20 18:57:15,325 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 18:57:15,326 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 18:57:15,330 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:57:15] "POST /predict HTTP/1.1" 200 -
+2026-01-20 18:57:33,727 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 18:57:33,744 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 18:57:34,052 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.19, mri_likely=False
+2026-01-20 18:57:34,053 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 18:57:34,054 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 18:57:34] "POST /predict HTTP/1.1" 200 -
+2026-01-20 19:00:26,967 - __main__ - INFO - Processing image: ChatGPT Image Nov 18, 2025, 12_12_39 PM.png (1224441 bytes)
+2026-01-20 19:00:27,044 - utils.preprocess - INFO - Preprocessing complete. Original size: (1024, 1024), Target size: (640, 640)
+2026-01-20 19:00:27,357 - __main__ - INFO - [DEMO] Prediction: tumor=False, confidence=0.23, mri_likely=False
+2026-01-20 19:00:27,357 - __main__ - INFO - Prediction complete: tumor_detected=False
+2026-01-20 19:00:27,362 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 19:00:27] "POST /predict HTTP/1.1" 200 -
+2026-01-20 19:00:58,577 - __main__ - INFO - Processing image: 4_jpg.rf.02d22bbaeb3dcac64ef99e82dfd946e9.jpg (32911 bytes)
+2026-01-20 19:00:58,603 - utils.preprocess - INFO - Preprocessing complete. Original size: (640, 640), Target size: (640, 640)
+2026-01-20 19:00:58,915 - __main__ - INFO - [DEMO] Prediction: tumor=True, confidence=0.80, mri_likely=False
+2026-01-20 19:00:58,916 - __main__ - INFO - Drawing bounding boxes: tumor_detected=True, bbox=[267, 341, 145, 87]
+2026-01-20 19:00:58,922 - __main__ - INFO - Drawing box at x=267, y=341, w=145, h=87
+2026-01-20 19:00:58,995 - __main__ - INFO - Bounding box drawn successfully
+2026-01-20 19:00:58,996 - __main__ - INFO - Prediction complete: tumor_detected=True
+2026-01-20 19:00:58,999 - werkzeug - INFO - 127.0.0.1 - - [20/Jan/2026 19:00:58] "POST /predict HTTP/1.1" 200 -

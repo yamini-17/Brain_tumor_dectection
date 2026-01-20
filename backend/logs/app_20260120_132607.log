@@ -1,0 +1,6 @@
+2026-01-20 13:26:07,946 - __main__ - INFO - ======================================================================
+2026-01-20 13:26:07,947 - __main__ - INFO - INITIALIZING BRAIN TUMOR DETECTION SYSTEM
+2026-01-20 13:26:07,947 - __main__ - INFO - ======================================================================
+2026-01-20 13:26:07,948 - utils.preprocess - INFO - ImagePreprocessor initialized with target size: (640, 640)
+2026-01-20 13:26:08,001 - __main__ - ERROR - Please ensure yolov9.pt is in the model/ directory
+2026-01-20 13:26:08,003 - __main__ - ERROR - Failed to initialize models. Exiting.

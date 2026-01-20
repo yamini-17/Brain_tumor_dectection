@@ -1,0 +1,106 @@
+/* Error Alert Component Styles */
+
+.error-alert {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  max-width: 500px;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-left: 4px solid var(--color-danger);
+  z-index: 999;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.error-content {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.error-icon {
+  color: var(--color-danger);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.error-message-wrapper {
+  flex: 1;
+}
+
+.error-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin: 0 0 0.25rem;
+}
+
+.error-message {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  margin: 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.error-close {
+  background: none;
+  border: none;
+  color: var(--color-gray-400);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+
+  &:hover {
+    color: var(--color-gray-600);
+    background: var(--color-gray-100);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 640px) {
+  .error-alert {
+    right: 0.5rem;
+    left: 0.5rem;
+    max-width: none;
+  }
+}
+
+/* Animation for multiple alerts stacking */
+.error-alert:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.error-alert:nth-child(2) {
+  top: 5rem;
+  animation-delay: 0.1s;
+}
+
+.error-alert:nth-child(3) {
+  top: 9rem;
+  animation-delay: 0.2s;
+}

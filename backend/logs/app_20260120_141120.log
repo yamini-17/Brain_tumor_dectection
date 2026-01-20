@@ -1,0 +1,16 @@
+2026-01-20 14:11:20,331 - __main__ - INFO - ======================================================================
+2026-01-20 14:11:20,332 - __main__ - INFO - INITIALIZING BRAIN TUMOR DETECTION SYSTEM
+2026-01-20 14:11:20,332 - __main__ - INFO - ======================================================================
+2026-01-20 14:11:20,333 - utils.preprocess - INFO - ImagePreprocessor initialized with target size: (640, 640)
+2026-01-20 14:11:20,333 - __main__ - INFO - [OK] Image Preprocessor initialized
+2026-01-20 14:11:20,333 - __main__ - WARNING - [!] Model file not found: model/yolov9.pt
+2026-01-20 14:11:20,334 - __main__ - WARNING - [!] Running in DEMO MODE - using simulated detections
+2026-01-20 14:11:20,334 - __main__ - INFO - [OK] Demo mode initialized (simulated predictions)
+2026-01-20 14:11:20,334 - __main__ - INFO - Starting Flask server on 0.0.0.0:5000
+2026-01-20 14:11:20,334 - __main__ - INFO - Debug mode: False
+2026-01-20 14:11:20,334 - __main__ - INFO - ======================================================================
+2026-01-20 14:11:20,359 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.136.158.1:5000
+2026-01-20 14:11:20,359 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

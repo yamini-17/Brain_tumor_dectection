@@ -1,0 +1,118 @@
+/* Image Upload Component Styles */
+
+.upload-container {
+  padding: 1.5rem;
+}
+
+.upload-box {
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  transition: all var(--transition-base);
+  cursor: pointer;
+
+  &:hover:not(.disabled) {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+  }
+
+  &.drag-active {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+    box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.upload-content {
+  pointer-events: none;
+  margin-bottom: 1.5rem;
+}
+
+.upload-icon {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.upload-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.upload-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-gray-600);
+  margin-bottom: 0.75rem;
+}
+
+.upload-info {
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 0.95rem;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 640px) {
+  .upload-box {
+    padding: 1.5rem;
+  }
+
+  .upload-title {
+    font-size: 1.1rem;
+  }
+
+  .upload-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .upload-button {
+    width: 100%;
+  }
+}

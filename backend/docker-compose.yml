@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  brain-tumor-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    container_name: brain-tumor-detection-api
+    
+    ports:
+      - "5000:5000"
+    
+    environment:
+      - FLASK_HOST=0.0.0.0
+      - FLASK_PORT=5000
+      - FLASK_DEBUG=False
+      - MODEL_PATH=/app/model/yolov9.pt
+      - CONFIDENCE_THRESHOLD=0.5
+      - IOU_THRESHOLD=0.45
+      - MAX_IMAGE_SIZE=10485760
+    
+    volumes:
+      - ./model:/app/model  # Mount model directory
+      - ./logs:/app/logs    # Mount logs directory
+    
+    restart: unless-stopped
+    
+    # GPU support (uncomment if you have NVIDIA GPU and Docker with GPU support)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  model:
+  logs:

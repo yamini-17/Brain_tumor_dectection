@@ -1,0 +1,130 @@
+/* Image Preview Component Styles */
+
+.preview-container {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.preview-wrapper {
+  position: relative;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-image {
+  display: none;
+}
+
+.preview-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: white;
+}
+
+.preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+  text-align: center;
+  padding: 2rem;
+}
+
+.preview-placeholder p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+.placeholder-text {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  margin-top: 0.5rem !important;
+}
+
+/* Image Info */
+.image-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--color-primary);
+}
+
+.image-info p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+.image-info strong {
+  color: var(--color-gray-900);
+  font-weight: 600;
+}
+
+/* Processing Overlay */
+.processing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  z-index: 10;
+  animation: fadeIn var(--transition-fast) ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.processing-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .preview-container {
+    padding: 1rem;
+  }
+
+  .preview-wrapper {
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+
+  .preview-placeholder {
+    padding: 1rem;
+  }
+
+  .image-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .image-info p {
+    margin: 0;
+  }
+}
